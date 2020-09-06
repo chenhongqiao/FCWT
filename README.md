@@ -1,4 +1,4 @@
-# Flash Card Writing Tester
+# FCWT - Flash Card Writing Tester
 
 A tool used to check if a paragraph contains certain words and phrases. No highlights or marks are needed.
 
