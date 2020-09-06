@@ -20,9 +20,9 @@ std::map<std::string, short int> vocab_tree(const std::vector<std::string> &v) {
 
 int main() {
     std::string pfn, vfn;
-    std::cout << "Paragraph file name: ";
+    std::cout << "Paragraph file path: ";
     std::cin >> pfn;
-    std::cout << "Vocabulary file name: ";
+    std::cout << "Vocabulary file path: ";
     std::cin >> vfn;
 
     std::ifstream vs;
