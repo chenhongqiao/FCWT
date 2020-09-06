@@ -20,7 +20,7 @@ std::map<std::string, short int> vocab_tree(const std::vector<std::string> &v) {
 
 int main() {
     std::string pfn, vfn;
-    std::cout << "Pararaph file name: ";
+    std::cout << "Paragraph file name: ";
     std::cin >> pfn;
     std::cout << "Vocabulary file name: ";
     std::cin >> vfn;
