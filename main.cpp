@@ -19,16 +19,26 @@ std::map<std::string, short int> vocab_tree(const std::vector<std::string> &v) {
 }
 
 int main() {
-    std::string pfn, vfn;
-    std::cout << "Paragraph file path: ";
-    std::cin >> pfn;
-    std::cout << "Vocabulary file path: ";
-    std::cin >> vfn;
-
     std::ifstream vs;
     std::ifstream ps;
-    vs.open(vfn);
-    ps.open(pfn);
+    vs.open("vocab.in");
+    ps.open("para.in");
+
+    if (!vs) {
+        vs.close();
+        std::string vfn;
+        std::cout << "Vocabulary file path: ";
+        std::cin >> vfn;
+        vs.open(vfn);
+    }
+    if (!ps) {
+        ps.close();
+        std::string pfn;
+        std::cout << "Paragraph file path: ";
+        std::cin >> pfn;
+        ps.open(pfn);
+    }
+
 
     std::vector<std::string> v = read_vocab(vs);
     std::map<std::string, short int> vt = vocab_tree(v);
@@ -61,6 +71,6 @@ int main() {
     }
 
     std::cout << cvd << "/" << v.size();
-    std::cout << " " << std::fixed << std::setprecision(1) << 1.0 * cvd / v.size() * 100 << "% " << std::endl;
+    std::cout << " " << std::fixed << std::setprecision(1) << 1.0 * cvd / v.size() * 100 + 0.05 << "% " << std::endl;
     return 0;
 }
